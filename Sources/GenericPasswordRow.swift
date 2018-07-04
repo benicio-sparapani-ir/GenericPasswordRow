@@ -13,9 +13,9 @@ open class _GenericPasswordRow: Row<GenericPasswordCell>, KeyboardReturnHandler 
 
     /// Configuration for the keyboardReturnType of this row
     open var keyboardReturnType: KeyboardReturnTypeConfiguration?
-
     open var passwordValidator: PasswordValidator = DefaultPasswordValidator()
     open var placeholder: String? = "Password"
+    open var showPasswordValidatorStrenght: Bool = true
 
     public required init(tag: String?) {
         super.init(tag: tag)

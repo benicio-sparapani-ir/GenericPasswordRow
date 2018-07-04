@@ -17,7 +17,8 @@ open class GenericPasswordCell: _FieldCell<String>, CellType {
 
     @IBOutlet public weak var leading: NSLayoutConstraint!
     @IBOutlet public weak var trailing: NSLayoutConstraint!
-
+    @IBOutlet weak var passwordStrenghtHeight: NSLayoutConstraint!
+    
     var genericPasswordRow: _GenericPasswordRow! {
         return row as? _GenericPasswordRow
     }
@@ -62,6 +63,14 @@ open class GenericPasswordCell: _FieldCell<String>, CellType {
         hintLabel?.alpha = 0
         passwordStrengthView?.setPasswordValidator(genericPasswordRow.passwordValidator)
         updatePasswordStrengthIfNeeded(animated: false)
+        
+        if genericPasswordRow.showPasswordValidatorStrenght {
+            passwordStrenghtHeight.contant = 5.0
+        } else {
+            passwordStrenghtHeight.contant = 0.0
+        }
+        
+        contentView.layoutIfNeeded()
     }
 
     override open func update() {
