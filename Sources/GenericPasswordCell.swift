@@ -65,9 +65,9 @@ open class GenericPasswordCell: _FieldCell<String>, CellType {
         updatePasswordStrengthIfNeeded(animated: false)
         
         if genericPasswordRow.showPasswordValidatorStrenght {
-            passwordStrenghtHeight.contant = 5.0
+            passwordStrenghtHeight.constant = 5.0
         } else {
-            passwordStrenghtHeight.contant = 0.0
+            passwordStrenghtHeight.constant = 0.0
         }
         
         contentView.layoutIfNeeded()
